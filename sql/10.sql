@@ -14,7 +14,9 @@ SELECT
     customer_id,
     first_name || ' ' || last_name AS name,
     sum(amount) AS total_payment,
-    'fixme' as percentile
+    NTILE(100) OVER (
+       
+    ) as percentile
 FROM customer
 JOIN payment USING (customer_id)
 GROUP BY customer_id,first_name,last_name
