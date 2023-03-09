@@ -28,4 +28,4 @@ select *
 from in_children
 left join in_horror using(first_name, last_name)
 where in_horror.first_name is null and in_horror.last_name is null
-order by last_name;
+order by last_name, first_name;

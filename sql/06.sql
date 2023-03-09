@@ -8,8 +8,7 @@
  */
 
 select distinct(first_name || ' ' || last_name) as "Actor Name"
-from film
-join film_actor using(film_id)
+from film_actor
 join actor using(actor_id)
 where film_id in (
     select film_id
